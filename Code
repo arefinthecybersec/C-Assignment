@@ -1,0 +1,547 @@
+# C++ Assignment-1
+
+                */ Submitted to : Nazmul Arefin
+                   Submitted  By: Mohammad Arefin Hossain
+                /*
+
+
+// ------------------ Problem 1 solution -----------------------
+ 
+#include <bits/stdc++.h> 
+using namespace std; 
+ 
+class Student{ 
+    public: 
+        string name; 
+        int roll_no; 
+}; 
+ 
+int main(){ 
+    Student obj; 
+    obj.name = "Jamshed"; 
+    obj.roll_no = 2; 
+ 
+    cout << "Name : "  << obj.name << endl; 
+    cout << "Roll no. : "  << obj.roll_no << endl; 
+ 
+    return 0; 
+}
+
+ 
+// ------------------ Problem 2 solution -----------------------
+ 
+#include <bits/stdc++.h> 
+using namespace std; 
+ 
+class Student{ 
+    public: 
+        string name, address; 
+        int roll_no, phone; 
+ 
+        void print(){ 
+            cout << "Roll no. : "  << roll_no << endl; 
+            cout << "Address : "  << address << endl; 
+            cout << "Phone : "  << phone << endl << endl; 
+        } 
+}; 
+ 
+int main(){ 
+    Student s1, s2; 
+ 
+    s1.roll_no = 2; 
+    s1.address = "ctg"; 
+    s1.phone = 1234; 
+    s1.print(); 
+ 
+    s2.roll_no = 3; 
+    s2.address = "dhaka"; 
+    s2.phone = 6789; 
+    s2.print(); 
+ 
+    return 0; 
+}
+
+ 
+// ------------------ Problem 3 solution -----------------------
+ 
+#include<iostream>
+#include<math.h>
+ 
+using namespace std;
+ 
+class Triangle
+{
+	public:
+	void area(int a,int b,int c);
+	void perimeter(int a,int b,int c);
+};
+ 
+void Triangle::area(int a,int b,int c)
+{
+	float s=((a+b+c)/2.0),A=sqrt(s*(s-a)*(s-b)*(s-c));
+	cout<<"Area of a triangle is: "<<A<<" sq. units\n";
+}
+ 
+void Triangle::perimeter(int a,int b,int c)
+{
+	cout<<"Perimeter of a triangle is: "<<a+b+c<<" units\n";
+}
+ 
+int main()
+{
+	Triangle tr1;
+	int side1=3,side2=4,side3=5;
+	tr1.area(side1,side2,side3);
+	tr1.perimeter(side1,side2,side3);
+	return 0;
+}
+  
+ 
+// ------------------ Problem 4 solution -----------------------
+ 
+#include <iostream>
+#include<math.h>
+using namespace std;
+ 
+class Triangle {
+private:
+	double a, b, c;
+public:
+	Triangle(double a,double b,double c){
+		this->a=a;
+		this->b=b;
+		this->c=c;
+	}
+ 
+	double area(){
+		double s = (a+b+c)/2;
+		return sqrt(s*(s-a)*(s-b)*(s-c));
+	}
+ 
+	double perimeter(){
+		return a+b+c;
+	}
+};
+//The start point of the program
+int main(){
+	double a, b, c;
+	cout<<"Ente a: ";
+	cin>>a;
+	cout<<"Ente b: ";
+	cin>>b;
+	cout<<"Ente c: ";
+	cin>>c;
+	Triangle triangle(a,b,c);
+	cout<<"Area: "<<triangle.area()<<"\n";
+	cout<<"Perimeter: "<<triangle.perimeter()<<"\n";
+ 
+	system("pause");
+	return 0;
+}
+  
+ 
+// ------------------ Problem 5 solution -----------------------
+ 
+#include <iostream>
+ 
+using namespace std;
+ 
+class Rect
+{
+private:
+    int a, b;
+ 
+public:
+    Rect(int a, int b)
+    {
+        this->a = a;
+        this->b = b;
+    }
+    int area()
+    {
+        return this->a * this->b;
+    }
+};
+ 
+int main()
+{
+    Rect obj = Rect(3, 4);
+    cout << obj.area() << "\n";
+ 
+    return 0;
+}
+  
+ 
+//------------------ Problem 6 solution -----------------------
+ 
+#include <iostream> 
+ 
+using namespace std; 
+ 
+class area{ 
+    public: 
+    int length = 0, breadth = 0; 
+    void setdim(int l, int b){ 
+        length = l; 
+        breadth = b; 
+    } 
+    int getarea(){ 
+        return length * breadth; 
+    } 
+}; 
+ 
+ 
+int main() 
+{ 
+    area a1; 
+    a1.setdim(3, 5); 
+    cout << a1.getarea() << endl; 
+ 
+    return 0; 
+}
+  
+ 
+//------------------ Problem 7 solution -----------------------
+ 
+#include<bits/stdc++.h>
+using namespace std;
+class Area{
+	public:
+		int len,width;
+		void getArea(){
+			cout<<"Enter the length: ";
+			cin>>len;
+			cout<<"Enter width: ";
+			cin>>width;
+		}
+		void returnArea(){
+			cout<<"Area is: "<<len*width;
+		}
+};
+int main(){
+	Area A;
+	A.getArea();
+	A.returnArea();
+    return 0;
+}
+  
+ 
+//------------------ Problem 8 solution -----------------------
+ 
+#include <iostream>
+using namespace std;
+class Average{
+    public:
+    static float calcAverate(float a, float b, float c){
+        return (a + b + c) / 3;
+    }
+};
+ 
+ 
+int main(){
+    cout<<"Enter three numbers: ";
+    float a, b, c;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    cout<<"The average is: "<<Average::calcAverate(a,b,c)<<endl;
+    return 0;
+}
+ 
+  
+//------------------ Problem 9 solution -----------------------
+ 
+#include<iostream>
+ 
+using namespace std;
+ 
+class Complex
+{
+	double re;
+	double im;
+public:
+	//Default constructor
+	Complex(){}
+	//Init constructor
+	Complex(double _re, double _im)
+	:re(_re),im(_im){}
+	//Copy constructor
+	Complex(Complex& x)
+	{
+		re=x.re;
+		im=x.im;
+	}
+	Complex operator+ (Complex& x)
+	{
+		re=re+x.re;
+		im=im+x.im;
+		return *this;
+	}
+	Complex operator- (Complex& x)
+	{
+		re=re-x.re;
+		im=im-x.im;
+		return *this;
+	}
+	Complex operator* (Complex& x)
+	{
+		re=re*x.re-im*x.im;
+		im=re*x.im+x.re*im;
+		return *this;
+	}
+	friend ostream& operator<<(ostream&, Complex&);
+	friend istream& operator>>(istream&, Complex&);
+//	friend Complex operator+(Complex&,Complex&);
+};
+istream& operator>> (istream& is, Complex& x)
+{
+	cout<<"Please, enter a real part of complex number: ";
+	is>>x.re;
+	cout<<"Please, enter an imaginary part of complex number: ";
+	is>>x.im;
+	return is;
+}
+ 
+ostream& operator<< (ostream& os, Complex& x)
+{
+	os<<x.re;
+	if(x.im>0)
+	{
+		os<<"+"<<x.im<<"i";	
+	}
+	else if(x.im<0)
+	{
+		os<<x.im<<"i";	
+	}	
+	return os;
+}
+ 
+ 
+ 
+int main()
+{
+	Complex a,b;
+	cin>>a;
+	cin>>b;
+	cout<<"You entered two complex numbers:\n";
+	cout<<"a= "<<a
+		<<"\nb= "<<b<<endl;
+	a+b;
+	cout<<"a+b= "<<a<<endl;
+	a-b;
+	cout<<"a-b= "<<a<<endl;
+	a*b;
+	cout<<"a*b= "<<a<<endl;
+}
+  
+ 
+//------------------ Problem 10 solution -----------------------
+ 
+class Box {
+public:
+  Box(double x, double y, double z)
+   : length(x), breadth(y), height(z) {}
+ 
+  double volume() const { return length * breadth * height; } 
+ 
+private:
+  double length;
+  double breadth;
+  double height;
+};
+ 
+  
+//------------------ Problem 11 solution -----------------------
+ 
+class Employee
+{
+private:
+    string name;
+    string idNumber;
+    string department;
+    string position;
+    int worked;
+ 
+ 
+public:
+    Employee(string n, string idNum, string depart, string pos, int yrsWrkd)
+    {
+        name = n;
+        idNumber = idNum;
+        department = depart;
+        position = pos;
+        worked = yrsWrkd;
+    }
+ 
+ 
+    void setName(string n)
+    {
+        name = n;
+    }
+    void setId(string idNum)
+    {
+        idNumber = idNum;
+    }
+    void setDepartment(string depart)
+    {
+        department = depart;
+    }
+    void setPosition(string pos)
+    {
+        position = pos;
+    }
+ 
+ 
+    string const getName()
+    {
+        return name;
+    }
+    string const getID()
+    {
+        return idNumber;
+    }
+    string const getDepartment()
+    {
+        return department;
+    }
+    string const getPosition()
+    {
+        return position;
+    }
+    int const getYears()
+    {
+        return worked;
+    }
+};
+  
+ 
+//------------------ Problem 12 solution -----------------------
+ 
+#include <iostream>
+using namespace std;
+ 
+ 
+ 
+ 
+class Employee{
+private:
+	float salary;
+	float numberHours;
+public:
+	//'getInfo()' which takes the salary, number of hours of work per day of employee as parameters
+	void getInfo(){
+		cout<<"Enter the salary: ";
+		cin>>salary;
+		cout<<"Enter the number of hours of work per day: ";
+		cin>>numberHours;
+	}
+	// 'AddSal()' which adds $10 to the salary of the employee if it is less than $500.
+	void AddSal(){
+		if(salary<500){
+			this->salary+=10.0;
+		}
+	}
+	// 'AddWork()' which adds $5 to the salary of the employee if the number of hours of work per day is more than 6 hours.
+	void AddWork(){
+		if(numberHours>6){
+			this->salary+=5.0;
+		}
+		cout<<"The final salary of the employee: "<<salary<<"\n\n";
+	}
+};
+  
+ 
+int main()
+{
+	Employee employee;
+	employee.getInfo();
+	employee.AddSal();
+	employee.AddWork();
+ 
+ 
+	system("pause");
+ 
+ 
+	return 0;
+}
+ 
+  
+//------------------ Problem 13 solution -----------------------
+ 
+#include <bits/stdc++.h>
+using namespace std;
+/*
+	Write a C++ Program in which Create a class called 'Matrix' containing constructor 
+	that initializes the number of rows and the number of columns of a new Matrix object. 
+	The Matrix class has the following information: 
+	1 - number of rows of matrix 
+	2 - number of columns of matrix 
+	3 - elements of matrix (You can use 2D vector) 
+ 
+	The Matrix class has functions for each of the following: 
+	1 - get the number of rows 
+	2 - get the number of columns 
+	3 - set the elements of the matrix at a given position (i,j) 
+	4 - adding two matrices. 
+	5 - multiplying the two matrices 
+	You can assume that the dimensions are correct for the multiplication and addition
+*/
+ 
+class Matrix
+{
+	public:
+		int Rows,Cols;
+		int Mat[Rows][Cols];
+		void GetRows(void)
+		{
+			cout<<"\n\tEnter No. of Rows: ";cin>>Rows;
+		}
+		void GetCols(void)
+		{
+			cout<<"\n\tEnter No. of Columns: ";cin>>Cols;
+		}
+		void SetElemenst(int i, int j, int e)
+		{
+			Mat[i][j] = e;
+		}
+		void AddMatrices(int r1, int r2, intr2, int c2, int m1, int m2)
+		{
+			int r,c,m[r1][c1];
+			for(r=0;r<r1;r++)
+			{
+				for(c=0;c<c1;c++)
+				{
+					m[r][c] = m1[r][c]+m2[r][c];
+				}
+			}
+		}
+ 
+};
+ 
+int main()
+{
+	int r,c,e;
+	class Matrix M1,M2;
+	M1.GetRows();
+	M1.GetCols();
+	M2.GetRows();
+	M2.GetCols();
+	for(r=0;r<M1.Rows;r++)
+	{
+		for(c=0;c<M1.Cols;c++)
+		{
+			cout<<"\nEnter M1["<<r<<"]["<<c<<"] Element = "; cin>>e;
+			M1.SetElemenst(r,c,e)
+		}
+	}
+	for(r=0;r<M2.Rows;r++)
+	{
+		for(c=0;c<M2.Cols;c++)
+		{
+			cout<<"\nEnter M2["<<r<<"]["<<c<<"] Element = "; cin>>e;
+			M2.SetElemenst(r,c,e)
+		}
+	}
+	M1.AddMatrices(M1.Rows,M1.Cols,M2.Rows,M2.Cols,M1.Mat,M2.Mat);
+	return(0);
+}
